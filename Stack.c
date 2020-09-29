@@ -28,8 +28,10 @@ int pop()
 	}
 	else
 	{
-		printf("%d\n", stack[top]);
+		int result= stack[pop];
+		printf("%d\n", result);
 		top = top - 1;
+		return result;
 	}
 }
 
