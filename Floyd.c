@@ -21,7 +21,7 @@ int A[MAX_VERTICES][MAX_VERTICES];
 void print_array_A(GraphType * g)
 {
 	int i, j;
-	printf("=============================\n");
+	printf("=======================================\n");
 	
 	for (i = 0; i < g->n; i++)
 	{
@@ -38,7 +38,7 @@ void print_array_A(GraphType * g)
 		}
 		printf("\n");
 	}
-	printf("=============================\n");
+	printf("=======================================\n");
 }
 
 
@@ -76,16 +76,18 @@ void floyd(GraphType* g)
 
 int main(void) 
 {
- GraphType g = { 7,
-	{{ 0,  7,  INF, INF,   3,  10, INF },
-	{ 7,  0,    4,  10,   2,   6, INF },
-	{ INF,  4,    0,   2, INF, INF, INF },
-	{ INF, 10,    2,   0,  11,   9,   4 },
-	{ 3,  2,  INF,  11,   0, INF,   5 },
-	{ 10,  6,  INF,   9, INF,   0, INF },
-	{ INF, INF, INF,   4,   5, INF,   0 } }
-
- };
+	GraphType g = { 10,
+	 {{ 0,  5,  6,  INF,  INF,   INF,  INF,   INF,  7, 14 },
+	 { 5,  0,  5,  4,  INF,   INF,  INF,   INF,  INF,  INF},
+	 { 6,  5,  0,  3,  10,   11,  INF,   INF,  INF,  5},
+	 { INF,  4,  3,  0,  6,   INF,  INF,   INF,  INF,  INF},
+	 { INF,  INF,  10,  6,  0,   8,  INF,   INF,  INF,  INF},
+	 { INF,  INF,  11,  INF,  8,  0 ,  7,   INF,  INF,  6},
+	 { INF,  INF,  INF,  INF,  INF,   7, 0 ,   3,  INF,  4},
+	 { INF,  INF,  INF,  INF,  INF,   INF,  3, 0  ,  8,  INF},
+	 { 7,  INF,  INF,  INF,  INF,   INF,  INF,   8,0  , 15 },
+	 { 14,  INF,  5,  INF,  INF,   6,  4,   INF, 15 ,0  } }
+	};
 
 	floyd(&g);
 
